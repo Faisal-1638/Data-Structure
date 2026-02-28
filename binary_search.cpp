@@ -8,10 +8,10 @@ int binarySearch(vector<int> &arr, int key)
 
     while (low <= high)
     {
-        int mid = low + (high - low) / 2;   // safer formula
+        int mid = low + (high - low) / 2;   
 
         if (arr[mid] == key)
-            return mid;          // return index
+            return mid;         
 
         else if (key < arr[mid])
             high = mid - 1;
@@ -20,7 +20,7 @@ int binarySearch(vector<int> &arr, int key)
             low = mid + 1;
     }
 
-    return -1;   // if not found
+    return -1;  
 }
 
 int main()

@@ -10,6 +10,7 @@ int main()
     int m = pattern.length();
 
     bool found = false;
+    int indx= -1;
 
     for(int i = 0; i <= n - m; i++)
     {
@@ -24,12 +25,16 @@ int main()
         if(j == m)
         {
             found = true;
+            indx=i;
             break;
         }
     }
 
     if(found)
-        cout << "Pattern Found";
+        cout << "Pattern Found At Index "<<indx;
     else
         cout << "Pattern Not Found";
+
+return 0;
+
 }

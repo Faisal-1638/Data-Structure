@@ -25,15 +25,23 @@ int binarySearch(vector<int> &arr, int key)
 
 int main()
 {
-    vector<int> arr = {10, 25, 30, 45, 60};
-    int key = 45;
+    int n; 
+    cin >> n;
+    vector<int> arr(n);
+     for(int i = 0; i < n; i++)
+     {
+        cin >> arr[i];
+     }
 
-    int result = binarySearch(arr, key);
+        int key;
+        cin >> key;
 
-    if (result != -1)
-        cout << "Element found at index: " << result;
-    else
-        cout << "Element not found";
+        int result = binarySearch(arr, key);
+
+        if (result != -1)
+          cout << "Element found at index: " << result;
+            else
+                cout << "Element not found";
 
     return 0;
 }

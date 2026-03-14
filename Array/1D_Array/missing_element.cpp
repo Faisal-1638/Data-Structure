@@ -12,6 +12,8 @@ int main()
         sum += v[i];
      }
 
+     //int sum = accumulate(v.begin(), v.end(), 0);//use it without loop
+
      long long expsum = n * (n+1) / 2;
 
      cout << expsum - sum;

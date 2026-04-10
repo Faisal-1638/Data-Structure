@@ -8,6 +8,7 @@ struct Node
 };
 
 Node* head = NULL;
+
 void curr()
 {
     /*
@@ -46,22 +47,22 @@ void curr()
 
  }
 
-  void display()
-  {
+void display()
+{
     Node* ptr = head;
     while(ptr != 0)
     {
         cout << ptr->val <<endl;
         ptr = ptr->next;
     }
-  }
+}
  
-  void solve()
- {
-    curr();
-    display();
+void solve()
+{
+        curr();
+        display();
 
- }
+}
 int main()
 
 {

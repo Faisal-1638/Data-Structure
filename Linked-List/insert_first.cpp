@@ -7,7 +7,8 @@ struct Node
     Node* next;
 };
 
-Node* head = NULL;
+Node* head = NULL;//initially empty list
+//Time complexity best case o(1), worst/average case o(n)
 void insertfirst(int item)
 {
    Node* nn = new Node;
@@ -15,16 +16,23 @@ void insertfirst(int item)
    nn->next = head;
    head = nn; 
 }
- void solve()
- {
-    insertfirst(5);
-    insertfirst(6);
+
+//Time complexity o(n)
+ void display()
+{
     Node* ptr = head;
-    while(ptr != NULL)
+    while(ptr != 0)
     {
         cout << ptr->val <<endl;
         ptr = ptr->next;
     }
+}
+
+void solve()
+ {
+    insertfirst(5);
+    insertfirst(6);
+    display();
 
  }
 int main()
@@ -33,6 +41,38 @@ int main()
     solve();
 
 }
+
+
+/*
+Works for:
+Empty list (head = NULL)
+Non-empty list
+Time Complexity: O(1) (constant time)
+*/
+
+
+
+/*
+🧠 What is head?
+
+👉 head is a pointer that stores the address of the first node of the linked list.
+
+Node* head;
+Node* → pointer to a node
+head → points to the first node
+🔗 Visual Understanding
+
+Suppose your list is:
+
+10 -> 20 -> 30 -> NULL
+
+Memory view:
+
+head
+  ↓
+[10 | next] → [20 | next] → [30 | NULL]
+*/
+
 
 /*
 #include <bits/stdc++.h>

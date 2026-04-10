@@ -8,6 +8,7 @@ struct Node
 };
 
 Node* head = NULL;
+int SIZE = 0;
 void curr()
 {
     Node* a = new Node{1};
@@ -23,6 +24,7 @@ void curr()
 
  void insertfirst(int item)
 {
+   SIZE++;
    Node* nn = new Node;
    nn->val = item;
    nn->next = head;
@@ -42,6 +44,7 @@ void curr()
             return;
         }
 
+            SIZE++;
             Node* ln = head;
             while(ln->next != 0)
             {
@@ -53,13 +56,22 @@ void curr()
      
      void insert(int item, int pos)
      {
-        if(pos == 1)
-        {
-            insertfirst(item);
+         if(pos > SIZE)
+         {
+            cout << "OUT of size";
+         }
+         
+         if(pos == 1)
+         {
+            insertfirst(item);//if their is no first function then write next two line
+            // nn->next = head;
+            // head = nn;
             return;
-        }
+         }
+
         Node* nn = new Node;
         nn->val = item;
+        
         //finding previous node
         Node* prev = head;
         for(int i = 1; i <=pos-2; i++)
@@ -67,7 +79,7 @@ void curr()
             prev = prev->next;
         }
 
-        Node* curr = prev->next;
+        Node* curr = prev->next;// pointer of prev next
 
         nn->next = curr;
         prev->next = nn;
@@ -86,10 +98,10 @@ void curr()
 
                 void solve()
                 {
-                    //curr();
-                    insert(5, 1);
-                    insert(12, 1);
-                    insert(14, 3);
+                    curr();
+                    insert(10, 3);
+                    // insert(12, 1);
+                    // insert(14, 3);
 
                     display();
                 }
@@ -99,3 +111,41 @@ int main()
     solve();
 
 }
+
+
+/*
+⏱️ Time Complexity
+🔹 1. Traversal Part
+The loop runs:
+(pos - 2) times
+In worst case:
+pos ≈ n  (end of list)
+
+So traversal = O(n)
+
+🔹 2. Insertion Part
+nn->next = prev->next;
+prev->next = nn;
+This is just pointer change → O(1)
+✅ Final Time Complexity
+Case	Time
+Best case (pos = 1)	O(1)
+Worst case (pos ≈ n)	O(n)
+
+👉 Overall:
+
+O(n)
+🔥 Simple Understanding
+You must walk through the list to find the position
+Walking takes time proportional to number of nodes
+
+👉 That’s why:
+
+Linked List insert (middle) = O(n)
+🚀 Comparison (Very Important)
+Operation	Time
+Insert First	O(1)
+Insert Last (without tail)	O(n)
+Insert Last (with tail)	O(1)
+Insert Middle	O(n)
+*/

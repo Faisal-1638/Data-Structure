@@ -1,26 +1,34 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int search(int arr[], int n, int item)
-{
-    for(int i = 0; i < n; i++)
-    {
-        if(arr[i] == item)
-         return i;
+void deleteElement(int arr[], int &n, int pos) {
+    for(int i = pos; i < n - 1; i++) {
+        arr[i] = arr[i + 1];
     }
-
-    return -1;
+    n--;
 }
 
-int main()
-{
-    int arr[] = {1, 2, 3 , 4 ,5};
-    int n = 5;
-    int item = 9;
+int main() {
+    int arr[100], n;
 
-    int result = search(arr,n, item );
+    cin >> n;
 
-    cout << result <<endl;
-    
-    
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int pos;
+    cin >> pos;
+
+    if(pos < 0 || pos >= n) {
+        return 0;
+    }
+
+    deleteElement(arr, n, pos);
+
+    for(int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
 }

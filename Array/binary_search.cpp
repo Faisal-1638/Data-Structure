@@ -33,6 +33,8 @@ int main()
         cin >> arr[i];
      }
 
+      sort(arr.begin(), arr.end());
+        
         int key;
         cin >> key;
 

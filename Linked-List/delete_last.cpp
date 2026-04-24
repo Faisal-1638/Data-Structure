@@ -7,10 +7,10 @@ struct Node
     Node* next;
 };
 
-Node* head = NULL;//initially empty list
+Node* head = NULL;
 Node* tail = NULL;
 
-void insertfirst(int item)
+    void insertfirst(int item)
     {
         Node* nn = new Node;
 
@@ -20,7 +20,7 @@ void insertfirst(int item)
          head = nn;
     }
 
-void insertlast(int item)
+    void insertlast(int item)
     {
         if(head == 0) {
             insertfirst(item);
@@ -35,24 +35,21 @@ void insertlast(int item)
         nn->next = NULL;
     }
 
-void deletefirst()
-{
-    if(head == NULL)
+    void deletefirst()
     {
-        return;
+        if(head == NULL)
+            return;
+
+        Node* temp = head;
+        head = head->next;
+        delete temp;
     }
 
-    Node* temp = head;
-    head = head->next;
-    delete temp;
-}
-
-void deletelast()
-{ 
+    void deletelast()
+    { 
         // If the list is empty, return
         if(head == NULL) 
           return;
-
           // If the list has only one node, delete it and return
           if(head->next == NULL) 
           {
@@ -71,10 +68,9 @@ void deletelast()
         ln_prev->next = 0;
         tail = ln_prev;
         delete temp;
-}
+    }
 
 int main()
-
 {
     
     insertlast(1);
@@ -94,9 +90,9 @@ int main()
 
 /*
 To perform the deletion operation at the end of linked list,
- we need to traverse the list to find the second last node, 
- then set its next pointer to null. 
- If the list is empty then there is no node to delete or has only one node then point head to null.
+we need to traverse the list to find the second last node, 
+then set its next pointer to null. 
+If the list is empty then there is no node to delete or has only one node then point head to null.
 
 Step-by-step approach:
 

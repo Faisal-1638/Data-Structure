@@ -47,7 +47,29 @@ int main()
 }
 
 /*
-✅ Time Complexity = O(log n)
+Why Binary Search?
+-> It repeatedly divides the search space in half
+-> Time complexity: O(log n) (very fast for large data)
+✅ Time Complexity = O(log n) ->worst/average case
+   Best Case: O(1) // when middle element is the expected element
+-> Much better than Linear Search (O(n))
+
+🔍 Binary Search Algorithm
+
+Idea
+
+Compare the target with the middle element:
+
+If equal → found
+If smaller → search left half
+If larger → search right half
+
+
+✅ Time Complexity = O(log n) ->worst/average case
+   Best Case: O(1)
+
+👉 Reason: The target element is found at the middle in the first comparison.
+
 ❓ Why not O(n)?
 
 Because binary search does NOT check every element.

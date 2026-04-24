@@ -22,3 +22,5 @@ return 0;
 
 
 }
+
+//Time complexity O(1)

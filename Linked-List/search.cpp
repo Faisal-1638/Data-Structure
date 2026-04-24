@@ -27,7 +27,6 @@ bool search(int key)
 {
     Node* ptr = head;
 
-    int pos = 1;
     while(ptr != NULL)
     {
         if(ptr->val == key)

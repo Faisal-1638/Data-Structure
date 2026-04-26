@@ -9,18 +9,18 @@ struct Node
 
 Node* head = NULL;
 int SIZE = 0;
-void curr()
-{
-    Node* a = new Node{1};
-    Node* b = new Node{2};
-    Node* c = new Node{3};
-    Node* d = new Node{4};
-    head = a;
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = 0;
-}
+// void curr()
+// {
+//     Node* a = new Node{1};
+//     Node* b = new Node{2};
+//     Node* c = new Node{3};
+//     Node* d = new Node{4};
+//     head = a;
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = 0;
+// }
 
  void insertfirst(int item)
 {
@@ -35,9 +35,8 @@ void curr()
     {
         Node* nn = new Node;
         nn->val = item;
-        nn->next = NULL;
 
-        if(head == 0)
+        if(head == NULL)
         {
             head = nn;
             //insertfirst(item);// instead of head == nn we can handle it by call insertfirst
@@ -52,13 +51,14 @@ void curr()
             }
 
             ln->next = nn;
+            nn->next = NULL;
     }
      
      void insert(int item, int pos)
      {
          if(pos > SIZE)
          {
-            cout << "OUT of size";
+            cout << "OUT of size" <<endl;
          }
          
          if(pos == 1)
@@ -72,7 +72,7 @@ void curr()
         Node* nn = new Node;
         nn->val = item;
         
-        //finding previous node
+        //finding previous node (pos-1)
         Node* prev = head;
         for(int i = 1; i <=pos-2; i++)
         {
@@ -91,17 +91,22 @@ void curr()
             Node* ptr = head;
             while(ptr != 0)
             {
-                cout << ptr->val <<endl;
+                cout << ptr->val << " ";
                 ptr = ptr->next;
             }
         }
 
                 void solve()
                 {
-                    curr();
-                    insert(10, 3);
-                    // insert(12, 1);
-                    // insert(14, 3);
+                    //curr();
+                    insertlast(4);
+                    insertlast(5);
+                    insertlast(6);
+                    insert(12, 2);
+                    insert(10, 1);
+                    insert(15, 3);
+                    
+                    
 
                     display();
                 }

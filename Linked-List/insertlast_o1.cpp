@@ -9,22 +9,22 @@ struct Node
 
 Node* head = NULL;
 Node* tail = NULL;//tail pointer for O(1) insertLast
-void curr()
-{
-    Node* a = new Node{1};
-    Node* b = new Node{2};
-    Node* c = new Node{3};
-    Node* d = new Node{4};
+// void curr()
+// {
+//     Node* a = new Node{1};
+//     Node* b = new Node{2};
+//     Node* c = new Node{3};
+//     Node* d = new Node{4};
     
-    head = a;// important .... we assign head == NULL , now head = a;
+//     head = a;// important .... we assign head == NULL , now head = a;
 
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = 0;
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = 0;
 
-    tail = d;// if use initializer list must the tail point to d;
-}
+//     tail = d;// if use initializer list must the tail point to d;
+// }
 
     void insertlast(int item)
     {
@@ -50,7 +50,7 @@ void curr()
             Node* ptr = head;
             while(ptr != NULL)
             {
-                cout << ptr->val <<endl;
+                cout << ptr->val << " ";
                 ptr = ptr->next;
             }
         }

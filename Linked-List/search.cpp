@@ -1,58 +1,74 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+class Node {
+public:
     int val;
     Node* next;
+
+    Node(int v) {
+        val = v;
+        next = NULL;
+    }
 };
 
-Node* head = NULL;
+class LinkedList {
+private:
+    Node* head;
 
-void curr()
-{
-    Node* a = new Node{1};
-    Node* b = new Node{2};
-    Node* c = new Node{3};
-    Node* d = new Node{4};
-    head = a;
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = 0;
-}
-
-
-bool search(int key)
-{
-    Node* ptr = head;
-
-    while(ptr != NULL)
-    {
-        if(ptr->val == key)
-        {
-            return true;
-        }
-
-        ptr = ptr->next;
+public:
+    LinkedList() {
+        head = NULL;
     }
 
-    return false;
+    // Insert at first (head)
+    void insertFirst(int val) {
+        Node* newNode = new Node(val);
+        newNode->next = head;
+        head = newNode;
+    }
 
-}
+    // Search element
+    bool search(int key) {
+        Node* ptr = head;
 
+        while (ptr != NULL) {
+            if (ptr->val == key) {
+                return true;
+            }
+            ptr = ptr->next;
+        }
+        return false;
+    }
 
-int main()
-{
-    curr();
-    
+    // Display list (for checking)
+    void display() {
+        Node* temp = head;
+        while (temp != NULL) {
+            cout << temp->val << " ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    LinkedList list;
+
+    // Insert at first (reverse order will appear)
+    list.insertFirst(4);
+    list.insertFirst(3);
+    list.insertFirst(2);
+    list.insertFirst(1);
+
+    list.display();  // Output: 1 2 3 4
+
     int key = 3;
 
-    bool find = search(key);
+    if (list.search(key))
+        cout << "Found\n";
+    else
+        cout << "Not Found\n";
 
-    if(find)
-      cout << "found" <<"\n";
-
-      else 
-       cout << "Not found" << "\n";
+    return 0;
 }

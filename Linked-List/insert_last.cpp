@@ -15,7 +15,7 @@ void curr()
     Node* c = new Node{3};
     Node* d = new Node{4};
     
-    head = a;// important .... we assign head == NULL , now head = a;
+    head = a;// important .... we assigned head == NULL , now head = a;
 
     a->next = b;
     b->next = c;
@@ -33,10 +33,10 @@ void curr()
 
     void insertlast(int item)
     {
-        if(head == NULL)//handle empty list
+        if(head == NULL)  //handle empty list
         {
-            //head = nn;//if not use insertfirst()
-            insertfirst(item);// instead of head == nn we can handle it by call insertfirst
+            //head = nn;  //if not use insertfirst()
+            insertfirst(item);  // instead of head == nn we can handle it by call insertfirst
             return;
         }
 
@@ -59,9 +59,11 @@ void curr()
             Node* ptr = head;
             while(ptr != NULL)
             {
-                cout << ptr->val <<endl;
+                cout << ptr->val << " ";
                 ptr = ptr->next;
             }
+
+            cout << endl;
         }
 
                 void solve()

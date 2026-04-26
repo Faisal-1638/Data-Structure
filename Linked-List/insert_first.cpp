@@ -10,7 +10,8 @@ struct Node
 Node* head = NULL;//initially empty list
 //Time complexity best case o(1), worst/average case o(n)
 void insertfirst(int item)
-{
+{  
+   //Node* nn = new Node{item, NULL};
    Node* nn = new Node;
    nn->val = item;
    nn->next = head;
@@ -23,7 +24,7 @@ void insertfirst(int item)
     Node* ptr = head;
     while(ptr != 0)
     {
-        cout << ptr->val <<endl;
+        cout << ptr->val << " ";
         ptr = ptr->next;
     }
 }

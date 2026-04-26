@@ -65,7 +65,7 @@ Node* tail = NULL;
         }
 
         Node* temp = tail;
-        ln_prev->next = 0;
+        ln_prev->next = NULL;
         tail = ln_prev;
         delete temp;
     }
@@ -74,7 +74,7 @@ int main()
 {
     
     insertlast(1);
-    //insertlast(2);
+    insertlast(2);
     deletelast();
 
     Node* ptr = head;

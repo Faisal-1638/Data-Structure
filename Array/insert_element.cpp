@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
   int n;
-  cin >> n;
+  cin >> n; 
   vector<int> v(n);//or use v(n+1) and instead of pushback.
 
     for(int i = 0; i < n; i++)
@@ -14,11 +14,12 @@ int main()
       int pos, value;
       cin >> pos >> value;
 
-      v.push_back(0);
+      v.push_back(0);// increase vector size by 1;
 
         for(int i = v.size() - 1; i > pos; i--)
         {
-            v[i] = v[i-1];
+            v[i] = v[i-1];//assume n = 5; size increases ... now n = 6; want 10 insert at pos 2...... v[i] == v[i-1] ..... v[5] becomes 5 ... v[4] becomes 4... v[3] becomes 3 ... v[2] becomes empty... we putt item to v[2]
+    
         }
 
           v[pos] = value;
@@ -30,7 +31,6 @@ int main()
 
     
           return 0;
-    
 }
 /*
 1. Insert at First (pos = 0)

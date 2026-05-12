@@ -13,11 +13,11 @@ int main()
            cin >> a[i][j];
 cout<<endl;
 
-   for(int i=0;i<m;i++)//remember the row i will run m times
+   for(int i=0;i<n;i++)
    {
-       for(int j=0;j<n;j++)
+       for(int j=0;j<m;j++)
        {
-         cout<<a[j][i]<<" ";
+         cout<<a[i][j]<<" ";
        }
        cout<<endl;
    }

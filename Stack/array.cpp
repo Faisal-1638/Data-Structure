@@ -1,8 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 #define mxsz 10
 int arr[mxsz], topPos = -1;
-void Push(int item) {
+
+void Push(int item) 
+{
     if(topPos == mxsz - 1)
     {
         cout<<"overflow"<<endl;
@@ -10,8 +13,11 @@ void Push(int item) {
     }
     topPos++;
     arr[topPos] = item;
+    //arr[++topPos] = item;
 }
-void Pop() {
+
+void Pop() 
+{
     if (topPos == -1)
     {
         cout<<"underflow"<<endl;
@@ -19,18 +25,24 @@ void Pop() {
     }
         topPos--;
 }
-int Top() {
+
+int Top() 
+{
     return arr[topPos];
 }
+
 int Size()
 {
     return topPos+1;
 }
-void Show() {
-for (int i = 0; i <= topPos; i++) {
-        cout << arr[i] << " ";
+
+void Show() 
+{
+    for (int i = 0; i <= topPos; i++) 
+    {
+            cout << arr[i] << " ";
     }
-    cout << endl;
+        cout << endl;
 }
 
 int main() {
@@ -41,8 +53,8 @@ int main() {
    Show();
    cout<<"top : ";
    cout << Top() << endl;
-
-  // cout<<"top after pop: ";
-   //cout << Top() << endl;
+   Pop();
+   cout<<"top after pop: ";
+   cout << Top() << endl;
     return 0;
 }

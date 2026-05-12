@@ -9,18 +9,6 @@ struct Node
 
 Node* head = NULL;
 int SIZE = 0;
-// void curr()
-// {
-//     Node* a = new Node{1};
-//     Node* b = new Node{2};
-//     Node* c = new Node{3};
-//     Node* d = new Node{4};
-//     head = a;
-//     a->next = b;
-//     b->next = c;
-//     c->next = d;
-//     d->next = 0;
-// }
 
  void insertfirst(int item)
 {
@@ -38,8 +26,7 @@ int SIZE = 0;
 
         if(head == NULL)
         {
-            head = nn;
-            //insertfirst(item);// instead of head == nn we can handle it by call insertfirst
+            insertfirst(item);// instead of head == nn we can handle it by call insertfirst
             return;
         }
 
@@ -56,16 +43,23 @@ int SIZE = 0;
      
      void insert(int item, int pos)
      {
-         if(pos > SIZE)
+         if(pos > SIZE + 1)
          {
             cout << "OUT of size" <<endl;
+            return;
          }
          
-         if(pos == 1)
+         if(head == NULL || pos == 1)
          {
             insertfirst(item);//if their is no first function then write next two line
             // nn->next = head;
             // head = nn;
+            return;
+         }
+
+         if(pos == SIZE + 1)
+         {
+            insertlast(item);
             return;
          }
 
@@ -84,6 +78,8 @@ int SIZE = 0;
         nn->next = curr;
         prev->next = nn;
 
+        SIZE++;
+
      }
 
         void display()
@@ -99,21 +95,26 @@ int SIZE = 0;
                 void solve()
                 {
                     //curr();
-                    insertlast(4);
-                    insertlast(5);
-                    insertlast(6);
-                    insert(12, 2);
-                    insert(10, 1);
-                    insert(15, 3);
-                    
-                    
+                    // insert(12, 1);
+                    // insert(10, 1);
+                    // insert(15, 1);
+                    // insert(18,2);
+                    // insert(20,5);
+                    insertlast(1);
+                    insertlast(2);
+                    insertlast(3);
+
+                    insert(12, 4);
+                    insert(10, 5);
+                    insert(15, 6);
+
 
                     display();
                 }
 int main()
 
 {
-    solve();
+    solve(); //output: 15 18 10 12 20 
 
 }
 

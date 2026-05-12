@@ -33,13 +33,14 @@ void solve()
  {
     insertfirst(5);
     insertfirst(6);
+    insertfirst(7);
     display();
 
  }
 int main()
 
 {
-    solve();
+    solve(); //output: 6 5 -> last to first
 
 }
 

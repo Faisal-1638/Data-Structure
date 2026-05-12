@@ -79,7 +79,7 @@ void curr()
 int main()
 
 {
-    solve();
+    solve(); //output: 10 12 14 16 -> first to last
 
 }
 

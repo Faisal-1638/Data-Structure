@@ -3,97 +3,108 @@ using namespace std;
 
 class Node {
 public:
-    int data;
+    int val;
     Node* next;
 
-    Node(int val) {
-        data = val;
+    Node(int v) { // Node(int v) : data(v), next(nullptr) {}
+        val = v;
         next = NULL;
+        
     }
 };
 
 class LinkedList {
 private:
     Node* head;
+    int SIZE;
 
 public:
     LinkedList() {
         head = NULL;
+        SIZE = 0;
     }
 
-    // 🔹 Insert at Beginning
-    void insertBeginning(int val) {
-        Node* newNode = new Node(val);
-        newNode->next = head;
-        head = newNode;
+    void insertFirst(int item) {
+        SIZE++;
+        Node* nn = new Node(item);
+        nn->next = head;
+        head = nn;
     }
 
-    // 🔹 Insert at End (Last)
-    void insertEnd(int val) {
-        Node* newNode = new Node(val);
+    void insertLast(int item) {
+        Node* nn = new Node(item);
 
         if (head == NULL) {
-            head = newNode;
+            head = nn;
+            SIZE++;
+            return;
+            // alternatively: insertFirst(item);
+        }
+
+        SIZE++;
+        Node* ln = head;
+
+        while (ln->next != NULL) {
+            ln = ln->next;
+        }
+
+        ln->next = nn;
+    }
+
+    void insertAtPosition(int item, int pos) {
+        if (pos > SIZE + 1 || pos <= 0) {
+            cout << "OUT of size\n";
             return;
         }
 
-        Node* temp = head;
-        while (temp->next != NULL) {
-            temp = temp->next;
-        }
-
-        temp->next = newNode;
-    }
-
-    // 🔹 Insert at Middle (Position-based)
-    void insertMiddle(int pos, int val) {
-        if (pos <= 1) {
-            insertBeginning(val);
+        if (pos == 1) {
+            insertFirst(item);
             return;
         }
 
-        Node* newNode = new Node(val);
-        Node* temp = head;
-
-        for (int i = 1; i < pos - 1 && temp != NULL; i++) {
-            temp = temp->next;
+        if(pos == SIZE + 1)
+        {
+            insertLast(item);
+            return;
         }
 
-        // If position is beyond length → insert at end
-        if (temp == NULL) return;
+        Node* nn = new Node(item);
 
-        newNode->next = temp->next;
-        temp->next = newNode;
+        // find previous node (pos-1)
+        Node* prev = head;
+        for (int i = 0; i < pos - 2; i++) {
+            prev = prev->next;
+        }
+
+        Node* curr = prev->next;
+
+        nn->next = curr;
+        prev->next = nn;
+
+        SIZE++;
     }
 
-    // 🔹 Display
     void display() {
-        Node* temp = head;
-
-        while (temp != NULL) {
-            cout << temp->data << " -> ";
-            temp = temp->next;
+        Node* ptr = head;
+        while (ptr != NULL) {
+            cout << ptr->val << " ";
+            ptr = ptr->next;
         }
-        cout << "NULL\n";
+        cout << endl;
     }
 };
 
 int main() {
     LinkedList list;
 
-    // 🔹 Insert at beginning
-    list.insertBeginning(30);
-    list.insertBeginning(10);
+    list.insertLast(4);
+    list.insertLast(5);
+    list.insertLast(6);
 
-    // 🔹 Insert at end
-    list.insertEnd(40);
-    list.insertEnd(50);
+    list.insertAtPosition(12, 4);
+    list.insertAtPosition(10, 5);
+    list.insertAtPosition(15, 6);
 
-    // 🔹 Insert in middle
-    list.insertMiddle(2, 20);  // position 2
-    list.insertMiddle(4, 35);  // position 4
-
-    cout << "Linked List:\n";
     list.display();
 
     return 0;

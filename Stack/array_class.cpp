@@ -43,6 +43,11 @@ public:
     bool isEmpty() {
         return top == -1;
     }
+
+    int size()
+    {
+        return top+1;
+    }
 };
 
 int main() {
@@ -56,6 +61,7 @@ int main() {
 
     cout << s.pop() << " popped from stack\n";
     cout << s.pop() << " popped from stack\n";
+    cout << s.size() << endl;
 
     return 0;
 }

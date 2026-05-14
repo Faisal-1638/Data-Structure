@@ -97,6 +97,7 @@ int main() {
     q.display();
 
     cout << "Front element: " << q.peek() << endl;
+    cout << q.isEmpty() << endl;
 
     return 0;
 }

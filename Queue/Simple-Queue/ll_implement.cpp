@@ -6,7 +6,8 @@ public:
     int val;
     Node* next;
 
-    Node(int v) { 
+    Node(int v) 
+    { 
         val = v;
         next = NULL;
         
@@ -82,5 +83,6 @@ int main()
   q1.dequeue();
   cout << q1.front() << endl;
   q1.display();
-
+  
+  return 0;
 }

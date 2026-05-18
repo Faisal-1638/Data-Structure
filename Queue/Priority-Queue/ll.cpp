@@ -71,6 +71,11 @@ public:
         delete temp;
     }
 
+    int front()
+    {
+        return head->data;
+    }
+
     // Display queue
     void display()
     {
@@ -105,8 +110,10 @@ int main()
 
     pq.display();
 
-    pq.remove();
+    cout << pq.front() << endl;
 
+    pq.remove();
+    
     pq.display();
 
     return 0;

@@ -28,10 +28,13 @@ public:
         if(front == -1)
         {
             front = rear = 0;
+            arr[rear] = x;
         }
+
         else if(rear == MAX -1)
         {
             rear = 0;
+            arr[rear] = x;
         }
 
         else 
@@ -81,12 +84,13 @@ public:
     int size()
     {
         if(front == -1)
-            return 0;
+           return 0;
 
         if(rear >= front)
-            return rear - front + 1;
+           return rear - front + 1;
 
-        return MAX - front + rear + 1;
+        else
+          return MAX - front + rear + 1;
     }
 
     bool empty()
@@ -94,28 +98,28 @@ public:
         return front == -1;
     }
 
-    void display()
-    {
-        if(front == -1)
-        {
-            cout << "Queue is empty\n";
-            return;
-        }
+    // void display()
+    // {
+    //     if(front == -1)
+    //     {
+    //         cout << "Queue is empty\n";
+    //         return;
+    //     }
 
-        int i = front;
+    //     int i = front;
 
-        while(true)
-        {
-            cout << arr[i] << " ";
+    //     while(true)
+    //     {
+    //         cout << arr[i] << " ";
 
-            if(i == rear)
-                break;
+    //         if(i == rear)
+    //             break;
 
-            i = (i + 1) % MAX;
-        }
+    //         i = (i + 1) % MAX;
+    //     }
 
-        cout << "\n";
-    }
+    //     cout << "\n";
+    // }
 };
 
 int main()
@@ -126,15 +130,18 @@ int main()
     q.enqueue(20);
     q.enqueue(30);
 
-    q.display();
-
     q.dequeue();
 
-    q.display();
 
     cout << "Front: " << q.Front() << endl;
     cout << "Rear: " << q.Rear() << endl;
     cout << "Size: " << q.size() << endl;
+
+    while(q.size() != 0)
+    {
+        cout << q.Front() << " ";
+        q.dequeue();
+    }
 
     return 0;
 }

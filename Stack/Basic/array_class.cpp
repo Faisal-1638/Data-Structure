@@ -9,33 +9,41 @@ private:
     int top;
 
 public:
-    Stack() {
+    Stack() 
+    {
         top = -1;  // Initialize stack as empty
     }
 
     // Push operation
-    void push(int x) {
+    void push(int x) 
+    {
         if (top >= MAX - 1) 
         {
             cout << "Stack Overflow\n";
             return;
         }
+
         arr[++top] = x;
     }
 
-    int pop() {
+    void pop() 
+    {
         if (top < 0) {
             cout << "Stack Underflow\n";
-            return -1;
+            return;
         }
-        return arr[top--];
+        // return arr[top--];
+        top--;
     }
 
-    int peek() {
-        if (top < 0) {
+    int peek() // Front
+    {
+        if (top < 0) 
+        {
             cout << "Stack is Empty\n";
             return -1;
         }
+
         return arr[top];
     }
 
@@ -46,7 +54,7 @@ public:
 
     int size()
     {
-        return top+1;
+        return top + 1;
     }
 };
 
@@ -59,8 +67,7 @@ int main() {
 
     cout << "Top element is: " << s.peek() << endl;
 
-    cout << s.pop() << " popped from stack\n";
-    cout << s.pop() << " popped from stack\n";
+    s.pop();
     cout << s.size() << endl;
 
     return 0;

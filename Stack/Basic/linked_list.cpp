@@ -12,22 +12,22 @@ public:
     }
 };
 
-class myStack 
+class MyStack 
 {
     Node* top;
     int count;
     
 public:
-    myStack() {
+    MyStack() {
         top = NULL;
         count = 0;
     }
 
     void push(int x) 
     {
-        Node* temp = new Node(x);
-        temp->next = top;
-        top = temp;
+        Node* nn = new Node(x);
+        nn->next = top;
+        top = nn;
         
         count++;
     }
@@ -56,6 +56,7 @@ public:
             cout << "Stack is Empty" << endl;
             return -1;
         }
+
         return top->data;
     }
 
@@ -68,11 +69,21 @@ public:
         {
             return count;
         }
+
+        void show()
+        {
+            Node* ptr = top;
+            while(ptr != 0)
+            {
+                cout << ptr->data << " ";
+                ptr = ptr->next;
+            }
+        }
 };
 
 int main() 
 {
-    myStack st;
+    MyStack st;
 
     st.push(1);
     st.push(2);
@@ -86,6 +97,7 @@ int main()
     cout << "Is stack empty: " << (st.isEmpty() ? "Yes" : "No") << endl;
 
     cout << "Current size: " << st.size() << endl;
+    st.show();
 
     return 0;
 }

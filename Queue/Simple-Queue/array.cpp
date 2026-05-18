@@ -45,14 +45,22 @@ public:
      int Front()
      {
         if(front == -1)
-         return -1;
+        {
+            cout << "Empty Queue" << endl;
+            return -1;
+        }
+        
         return arr[front];
      }
 
      int Rear()
      {
-        if(rear == -1)
-         return -1;
+         if(rear == -1)
+        {
+            cout << "Empty Queue" << endl;
+            return -1;
+        }
+        
         return arr[rear];
      }
 
@@ -60,6 +68,7 @@ public:
      {
         if(front == -1)
          return 0;
+
         return rear - front + 1;
      }
 
@@ -90,10 +99,9 @@ int main()
     q.enqueue(6);
     q.enqueue(10);
     q.display();
-        cout << "front: " << q.Front() << endl;
-        cout << "rear: " << q.Rear() << endl;
-        cout << "size: " << q.size();
-
+    cout << "front: " << q.Front() << endl;
+    cout << "rear: " << q.Rear() << endl;
+    cout << "size: " << q.size();
 }
 
 /*

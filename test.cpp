@@ -1,51 +1,107 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+#define MAX 10
+class CircularQueue
+{
+    private: 
+      int arr[MAX];
+      int front;
+      int rear;
+
+    public:
+      CircularQueue()
+      {
+        front = -1;
+        rear = -1;
+      }
+
+      void Enqueue(int x)
+      {
+        if(front == 0 && rear == MAX -1 || rear + 1 == front)
+        {
+            cout << "Overflow\n";
+            return;
+        }
+
+        if(front == -1)
+        {
+            front = rear = 0;
+            arr[rear] = x;
+        }
+
+        else if(rear == MAX - 1)
+        {
+         rear = 0;
+         arr[rear] = x;
+        }
+
+         else
+          arr[++rear] = x;
+      }
+
+      void Dequeue()
+      {
+        if(front == -1)
+        {
+            cout << "Underflow\n";
+            return;
+        }
+
+        if(front == rear)
+          front = rear = -1;
+
+          else if(front == MAX - 1)
+          {
+            front = 0;
+          }
+
+          else
+           front++;        
+      }
+
+      int Front()
+      {
+        if(front == -1)
+            return -1;
+        
+        return arr[front];
+      }
+
+      int size()
+      {
+        if(front == -1)
+        return 0;
+        
+        if(rear >= front)
+        return rear - front + 1;
+
+        else 
+         return MAX - front + rear + 1;
+      }
+
+
+};
+
+
+
+
 int main()
 {
-  int t;
-  cin >> t;
-  while(t--)
-  {
-    int n;
-    cin >> n;
-    vector<int> v(n);
+    CircularQueue q;
+    q.Enqueue(5);
+    q.Enqueue(10);
+    q.Enqueue(20);
 
-    
-   int sum = 0;
-   for(int i = 0; i < n; i++)
-   {
-    cin >> v[i];
-    sum += v[i];
-   }
+    cout << q.size() << endl;
+    cout << q.Front() << endl;
 
-   if(sum == n)
-   {
-     if(n == 2)
-      cout << -2 << "\n";
+    q.Dequeue();
 
-      else 
-       cout << n - 4 << "\n";
-   }
-
-   else
-   {
-        for(int i = 0; i < n -1 ; i++)
-        {
-            if(v[i] == -1 && v[i + 1] == -1)
-            {
-                v[i] = 1;
-                v[i + 1] = 1;
-                break;
-            }
-        }
-            int sum = 0;
-            for(int i = 0; i < n ; i++)
-            {
-                sum += v[i];
-            } 
-        
-        cout << sum << "\n";
+    while(q.size() != 0)
+    {
+        cout << q.Front() << " ";
+        q.Dequeue();
     }
 
-  }
+
 }

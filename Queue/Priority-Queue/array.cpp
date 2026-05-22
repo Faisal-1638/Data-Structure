@@ -173,8 +173,6 @@ public:
             return;
         }
 
-        cout << "Deleted: " << arr[front] << endl;
-
         if(front == rear)
         {
             front = rear = -1;

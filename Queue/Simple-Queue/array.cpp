@@ -35,6 +35,7 @@ public:
             return;
         }
 
+        cout << arr[front] << " deleted from the queue" << endl;
         if(front == rear)
          front = rear = -1;
 
@@ -101,7 +102,12 @@ int main()
     q.display();
     cout << "front: " << q.Front() << endl;
     cout << "rear: " << q.Rear() << endl;
-    cout << "size: " << q.size();
+    cout << "size: " << q.size() << endl;
+    q.dequeue();
+    q.dequeue();
+    cout << "front: " << q.Front() << endl;
+    cout << "rear: " << q.Rear() << endl;
+    cout << "size: " << q.size() << endl;
 }
 
 /*

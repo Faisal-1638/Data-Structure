@@ -66,6 +66,6 @@ Recursion
 
 Hashing
 
-🛠️ **Language Used**
+**Language Used**
 
 C++ (STL + Manual Implementation)

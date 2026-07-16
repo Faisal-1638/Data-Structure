@@ -1,46 +1,36 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
     int t;
     cin >> t;
-
     while(t--)
     {
-        int n, q;
-        cin >> n >> q;
+        vector<string> s(8);
 
-        vector<long long> a(n + 1);
-
-        for(int i = 1; i <= n; i++)
+        for(int i = 0; i < 8; i++)
         {
-            cin >> a[i];
+            cin >> s[i];
         }
 
-        while(q--)
-        {
-            long long l, r, k;
-            cin >> l >> r >> k;
+        bool f = false;
 
-            long long sum = 0;
-            for(int i = 1; i <= n; i++)
+        for(int i = 0; i < 8; i++)
+        {
+            if(s[i] == "RRRRRRRR")
             {
-                if(i >= l && i <= r)
-                  continue;
-
-                  else 
-                    sum += a[i];
+                f = true;
+                break;
             }
-
-            long long newSum = sum + ( r - l + 1) * k;
-               
-            if(newSum %  2 != 0)
-                cout << "YES\n";
-            else
-                cout << "NO\n";
         }
-    }
 
-    return 0;
+        if(f)
+         cout << "R" << "\n";
+
+         else 
+          cout << "B" << "\n";
+
+    }
+    
+ return 0;
 }

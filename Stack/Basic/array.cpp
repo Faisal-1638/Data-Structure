@@ -36,6 +36,7 @@ int Size()
     return topPos+1;
 }
 
+
 void Show() 
 {
     for (int i = 0; i <= topPos; i++) 
@@ -44,11 +45,11 @@ void Show()
     }
         cout << endl;
 }
-
 int main() {
    Push(5);
    Push(2);
    Push(3);
+   Push(4);
    cout<<"stack : ";
    Show();
    cout<<"top : ";

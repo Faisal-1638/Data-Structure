@@ -17,7 +17,7 @@ void countingSort(vector<int>& arr, int exp)
 
     // Build output array (RIGHT TO LEFT)
      vector<int> output(n);
-     
+
     for (int i = n - 1; i >= 0; i--)
     {
         int digit = (arr[i] / exp) % 10;
@@ -66,4 +66,33 @@ Output array: O(n)
 Count array (size 10): O(1)
 
 Overall auxiliary space:  O(n)
+
+One of the main advantages of Radix Sort is that it overcomes the large range limitation of Counting Sort.
+
+Radix Sort overcomes the range problem of Counting Sort because it sorts numbers digit by digit instead of allocating a count array for the entire value range. 
+It uses a fixed-size count array (equal to the base, e.g., 10 for decimal), making it efficient even when the input values have a very large range
+Radix Sort does not create an array based on the maximum value.
+
+Instead, it sorts one digit at a time using Counting Sort as a stable subroutine.
+
+Example:
+
+329
+457
+657
+839
+436
+720
+355
+
+It sorts by:
+
+Units digit
+Tens digit
+Hundreds digit
+
+Each pass uses a count array of only 10 elements (0–9) for decimal numbers.
+
+So regardless of whether the largest number is 999 or 999999999, the count array size remains 10.
+
 */

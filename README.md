@@ -76,12 +76,12 @@ Windows (Command Prompt / PowerShell)
 
 1. Compile a C++ file
 
-g++ file.cpp -o file
+  g++ file.cpp -o file
 
 Example:
 
-g++ main.cpp -o main
+  g++ main.cpp -o main
 
 2. Run the program
 
-.\main
+  .\main

@@ -1,45 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
-void counting(vector<int>& arr)
+void heapify(vector<int> &arr, int n, int i)
+{
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
+
+    if(left < n && arr[left] > arr[largest])
+     largest = left;
+
+      if(right < n && arr[right] > arr[largest])
+      largest = right;
+
+        if(largest != i)
+        {
+            swap(arr[i], arr[largest]);
+            heapify(arr,n,largest);
+        }
+
+
+}
+void heapsort(vector<int> &arr)
 {
     int n = arr.size();
-
-    int mx = arr[0];
-    for(int i = 0; i < n; i++)
+    for(int i = n / 2 - 1; i >= 0; i--)
     {
-        mx = max(mx, arr[i]);
+        heapify(arr, n, i);
     }
 
-    vector<int> count(mx + 1, 0);
-    for(int x : arr)
+    for(int i = n - 1; i > 0; i--)
     {
-        count[x]++;
+        swap(arr[0], arr[i]);
+        heapify(arr, i , 0);
     }
-
-    for(int i = 1; i <= mx; i++)
-    {
-        count[i] = count[i] + count[i - 1];
-    }
-
-    vector<int> output(n);
-
-    for(int i = n - 1; i >= 0; i--)
-    {
-        output[count[arr[i]] - 1] = arr[i];
-        count[arr[i]]--;
-    }
-
-    for(int i = 0; i < n; i++)
-    {
-        arr[i] = output[i];
-    }
-
 }
 
 int main()
 {
     vector<int> arr = {4,2,2,8,3,3,1};
-    counting(arr);
+    heapsort(arr);
 
     for(int x : arr)
     {

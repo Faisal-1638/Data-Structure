@@ -72,6 +72,21 @@ Disadvantages
   -Works only for integer keys (or data that can be mapped to integers).
   -Not efficient if the range of values (k) is much larger than the number of elements (n), because the count array becomes large.
   -Requires extra memory for the count and output arrays.
+  
+-Suppose the input is:
+
+[2, 5, 1000000]
+
+Then the count array size must be:
+
+1000000 + 1
+
+Even though there are only 3 elements, it needs over 1 million array positions, wasting memory.
+
+Time Complexity: O(n + k)
+Space Complexity: O(k)
+
+where k = range of values.
 */
 
 

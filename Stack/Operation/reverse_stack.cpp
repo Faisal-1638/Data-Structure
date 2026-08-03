@@ -71,3 +71,59 @@ int main()
 
     return 0;
 }
+
+/*
+Normal approach : Only reverse the stack using top and pop.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define mxsz 10
+int arr[mxsz], topPos = -1;
+
+void Push(int item)
+{
+    if(topPos == mxsz - 1)
+    {
+        cout << "overflow\n";
+        return;
+    }
+    arr[++topPos] = item;
+}
+
+void Pop()
+{
+    topPos--;
+}
+
+int Top()
+{
+    return arr[topPos];
+}
+
+void Show()
+{
+    while(topPos!= -1)
+    {
+        cout << arr[topPos] << " ";
+        Pop();
+
+    }
+    cout << endl;
+}
+
+
+int main()
+{
+    Push(5);
+    Push(2);
+    Push(3);
+    Push(4);
+
+    Show();
+    
+
+
+    return 0;
+}
+*/

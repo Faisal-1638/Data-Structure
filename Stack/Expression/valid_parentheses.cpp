@@ -59,7 +59,7 @@ bool isBalanced(string& s) {
         } 
         else if (s[i] == ')' || s[i] == '}' || s[i] == ']') {
             
-            // no opening bracket
+        
             if (top == -1) 
               return false; 
 

@@ -37,7 +37,9 @@ public:
         nn->next = head;
 
         if(head != NULL)
+        {
             head->prev = nn;
+        }
 
         head = nn;
         SIZE++;

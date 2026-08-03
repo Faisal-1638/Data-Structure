@@ -1,36 +1,50 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+void counting(vector<int>& arr)
+{
+    int n = arr.size();
+
+    int mx = arr[0];
+    for(int i = 0; i < n; i++)
+    {
+        mx = max(mx, arr[i]);
+    }
+
+    vector<int> count(mx + 1, 0);
+    for(int x : arr)
+    {
+        count[x]++;
+    }
+
+    for(int i = 1; i <= mx; i++)
+    {
+        count[i] = count[i] + count[i - 1];
+    }
+
+    vector<int> output(n);
+
+    for(int i = n - 1; i >= 0; i--)
+    {
+        output[count[arr[i]] - 1] = arr[i];
+        count[arr[i]]--;
+    }
+
+    for(int i = 0; i < n; i++)
+    {
+        arr[i] = output[i];
+    }
+
+}
+
 int main()
 {
-    int t;
-    cin >> t;
-    while(t--)
+    vector<int> arr = {4,2,2,8,3,3,1};
+    counting(arr);
+
+    for(int x : arr)
     {
-        vector<string> s(8);
-
-        for(int i = 0; i < 8; i++)
-        {
-            cin >> s[i];
-        }
-
-        bool f = false;
-
-        for(int i = 0; i < 8; i++)
-        {
-            if(s[i] == "RRRRRRRR")
-            {
-                f = true;
-                break;
-            }
-        }
-
-        if(f)
-         cout << "R" << "\n";
-
-         else 
-          cout << "B" << "\n";
-
+        cout << x << " ";
     }
-    
- return 0;
+
+    return 0;
 }

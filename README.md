@@ -69,3 +69,19 @@ Hashing
 **Language Used**
 
 C++ (STL + Manual Implementation)
+
+**Step to run in terminal**
+
+Windows (Command Prompt / PowerShell)
+
+1. Compile a C++ file
+
+g++ file.cpp -o file
+
+Example:
+
+g++ main.cpp -o main
+
+2. Run the program
+
+.\main

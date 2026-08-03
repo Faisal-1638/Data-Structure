@@ -97,7 +97,8 @@ next → points forward
 
 🧠 Key Trick
 After swapping:
-current->prev = current->next;current->next = temp;
+current->prev = current->next;
+current->next = temp;
 👉 The original next node is now in current->prev
 So to move forward, we do:
 current = current->prev;

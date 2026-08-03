@@ -34,3 +34,44 @@ int main()
 
     return 0;
 }
+
+
+
+/*
+
+Time Complexity
+Let:
+
+n = number of elements
+k = maximum value in the array
+
+Step	            Complexity
+Find maximum	      O(n)
+Count frequencies	  O(n)
+Build prefix sums	  O(k)
+Build output array	  O(n)
+Copy back	          O(n)
+Total	              O(n + k)
+
+If k ≤ n then:
+
+O(n+k)=O(n)
+
+Space Complexity
+
+Count array: O(k)
+Output array: O(n)
+
+Total auxiliary space: O(n + k)
+
+Advantages
+  -Very fast when the value range (k) is small.
+  -Stable sorting algorithm.
+  -Faster than O(n log n) comparison sorts for suitable data.
+Disadvantages
+  -Works only for integer keys (or data that can be mapped to integers).
+  -Not efficient if the range of values (k) is much larger than the number of elements (n), because the count array becomes large.
+  -Requires extra memory for the count and output arrays.
+*/
+
+

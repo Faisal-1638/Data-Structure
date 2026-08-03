@@ -12,5 +12,5 @@ int fib(int n)
 
 int main()
 {
- std:: cout <<  fib(5);
+ std:: cout <<  fib(4);
 }

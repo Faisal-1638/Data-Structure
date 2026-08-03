@@ -51,7 +51,6 @@ public:
         SIZE++;
     }
 
-    // 🔥 Delete First
     void deleteFirst()
     {
         if(head == NULL)
@@ -70,7 +69,6 @@ public:
         SIZE--;
     }
 
-    // 🔥 Delete Last
     void deleteLast()
     {
         if(head == NULL)

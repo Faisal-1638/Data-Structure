@@ -24,7 +24,8 @@ Queue
 
   -Priority Queue
 
-Deque
+  -Dequeue
+
 
 **Non-Linear Data Structures**
 
@@ -34,7 +35,13 @@ Binary Tree
 
 Binary Search Tree (BST)
 
-AVL Tree
+Heap
+
+Balanced Binary Search Tree 
+
+  -AVL Tree
+
+  -Red-Black Tree
 
 Graph
 
@@ -46,21 +53,21 @@ DFS (Depth First Search)
 
 Searching Algorithms
 
-Linear Search
+  -Linear Search
 
-Binary Search
+  -Binary Search
 
 Sorting Algorithms
 
-Bubble Sort
+  -Selection Sort
 
-Selection Sort
+  -Insertion Sort
 
-Insertion Sort
+  -Counting sort
 
-Merge Sort
+  -Radix Sort
 
-Quick Sort
+  -Heap sort
 
 Recursion
 
@@ -68,20 +75,20 @@ Hashing
 
 **Language Used**
 
-C++ (STL + Manual Implementation)
+C++ (STL + Manual/Core Implementation)
 
 **Step to run in terminal**
 
 Windows (Command Prompt / PowerShell)
 
-1. Compile a C++ file
+**Compile a C++ file**
 
-  g++ file.cpp -o file
+g++ file.cpp -o file
 
 Example:
 
-  g++ main.cpp -o main
+g++ main.cpp -o main
 
-2. Run the program
+**Run the program**
 
-  .\main
+.\main

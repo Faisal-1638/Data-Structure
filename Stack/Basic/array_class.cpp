@@ -56,6 +56,15 @@ public:
     {
         return top + 1;
     }
+
+    void Show() 
+    {
+        for (int i = 0; i <= top; i++) 
+        {
+                cout << arr[i] << " ";
+        }
+            cout << endl;
+    }
 };
 
 int main() {
@@ -69,6 +78,7 @@ int main() {
 
     s.pop();
     cout << s.size() << endl;
+    s.Show();
 
     return 0;
 }

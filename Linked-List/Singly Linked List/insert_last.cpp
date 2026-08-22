@@ -8,20 +8,20 @@ struct Node
 };
 
 Node* head = NULL;
-void curr()
-{
-    Node* a = new Node{1};
-    Node* b = new Node{2};
-    Node* c = new Node{3};
-    Node* d = new Node{4};
+// void curr()
+// {
+//     Node* a = new Node{1};
+//     Node* b = new Node{2};
+//     Node* c = new Node{3};
+//     Node* d = new Node{4};
     
-    head = a;// important .... we assigned head == NULL , now head = a;
+//     head = a;// important .... we assigned head == NULL , now head = a;
 
-    a->next = b;
-    b->next = c;
-    c->next = d;
-    d->next = 0;
-}
+//     a->next = b;
+//     b->next = c;
+//     c->next = d;
+//     d->next = 0;
+// }
 
  void insertfirst(int item)
 {

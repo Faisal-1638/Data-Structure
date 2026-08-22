@@ -49,6 +49,7 @@ public:
         }
 
         ln->next = nn;
+        nn->next = NULL;
     }
 
     void insertAtPosition(int item, int pos) {
@@ -72,7 +73,7 @@ public:
 
         // find previous node (pos-1)
         Node* prev = head;
-        for (int i = 0; i < pos - 2; i++) {
+        for (int i = 0; i < pos - 2; i++) { //for (int i = 1; i < pos - 1; i++)
             prev = prev->next;
         }
 

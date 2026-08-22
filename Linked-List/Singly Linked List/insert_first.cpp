@@ -8,6 +8,7 @@ struct Node
 };
 
 Node* head = NULL;//initially empty list
+
 //Time complexity best case o(1), worst/average case o(n)
 void insertfirst(int item)
 {  

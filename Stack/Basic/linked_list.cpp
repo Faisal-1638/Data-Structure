@@ -73,7 +73,7 @@ public:
         void show()
         {
             Node* ptr = top;
-            while(ptr != 0)
+            while(ptr != NULL)
             {
                 cout << ptr->data << " ";
                 ptr = ptr->next;

@@ -1,0 +1,11 @@
+Phase,Experiment,Dataset_Size,Algorithm,Time_Microseconds,Time_Milliseconds
+Phase1,Random,50,InsertionSort,14.196,0.014
+Phase1,NearlySorted,50,InsertionSort,2.097,0.002
+Phase1,Random,50,SelectionSort,30.542,0.031
+Phase1,NearlySorted,50,SelectionSort,27.883,0.028
+Phase2,Top500_Extract,100000,FullHeapSort,102987.000,102.987
+Phase2,Top500_Extract,100000,BuildHeap_Extract500,4375.000,4.375
+Phase3,Logistics_1M,1000000,HeapSort,769716.000,769.716
+Phase3,Logistics_1M,1000000,RadixSort,151876.000,151.876
+Bonus,Bandwidth_5M,5000000,RadixSort_32bit,448936.000,448.936
+Bonus,Bandwidth_5M,5000000,RadixSort_64bit,475197.000,475.197

@@ -21,7 +21,7 @@ void heapify(vector<int>& arr, int n, int i) {
 void heapSort(vector<int>& arr) {
     int n = arr.size();
 
-    // Build Max Heap
+    // At first Build Max Heap
     for (int i = n / 2 - 1; i >= 0; i--)// i = last non-leaf node denoted by n /2 - 1
         heapify(arr, n, i);
 

@@ -1,48 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
-void heapify(vector<int> &arr, int n, int i)
-{
-    int largest = i;
-    int left = 2 * i + 1;
-    int right = 2 * i + 2;
-
-    if(left < n && arr[left] > arr[largest])
-     largest = left;
-
-      if(right < n && arr[right] > arr[largest])
-      largest = right;
-
-        if(largest != i)
-        {
-            swap(arr[i], arr[largest]);
-            heapify(arr,n,largest);
-        }
-
-
-}
-void heapsort(vector<int> &arr)
-{
-    int n = arr.size();
-    for(int i = n / 2 - 1; i >= 0; i--)
-    {
-        heapify(arr, n, i);
-    }
-
-    for(int i = n - 1; i > 0; i--)
-    {
-        swap(arr[0], arr[i]);
-        heapify(arr, i , 0);
-    }
-}
 
 int main()
 {
-    vector<int> arr = {4,2,2,8,3,3,1};
-    heapsort(arr);
+    int t;
+    cin >> t;
 
-    for(int x : arr)
+    while (t--)
     {
-        cout << x << " ";
+        int n;
+        cin >> n;
+
+        bool f = true;
+        for(int i = 2; i < n; i++)
+        {
+            if((n + 1) % i == 0)
+            {
+             f = false;
+             break;
+            }
+        }
+
+        if(f)
+        cout <<  "YES\n";
+
+        else
+         cout << "NO\n";
+        
+
     }
 
     return 0;

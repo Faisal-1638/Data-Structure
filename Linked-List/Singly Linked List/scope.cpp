@@ -42,8 +42,6 @@ void curr()
     Node* nn = new Node;
     nn->val = item;
 
-    while()
-
 
  }
 

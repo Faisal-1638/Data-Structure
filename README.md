@@ -58,16 +58,22 @@ Searching Algorithms
   -Binary Search
 
 Sorting Algorithms
+  
+   Comparison-Based
 
   -Selection Sort
 
   -Insertion Sort
 
+  -Heap sort
+
+   Non-Comparison-Based
+   
   -Counting sort
 
   -Radix Sort
 
-  -Heap sort
+  
 
 Recursion
 

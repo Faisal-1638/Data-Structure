@@ -60,6 +60,8 @@ Searching Algorithms
 Sorting Algorithms
   
    Comparison-Based
+   
+  -Bubble Sort
 
   -Selection Sort
 

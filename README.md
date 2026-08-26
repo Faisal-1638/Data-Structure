@@ -1,87 +1,87 @@
 This repository contains implementations of fundamental Data Structures in C++ along with examples and explanations. It is designed for learning, practice, and interview preparation.
 
-**Topics Covered**
+# Topics Covered
 
-**Linear Data Structures**
+## Linear Data Structures**
 
-Array
+**Array**
 
-Linked List
+**Linked List**
 
-  -Singly Linked List
+  * Singly Linked List
 
-  -Doubly Linked List
+  * Doubly Linked List
 
-  -Circular Linked List
+  * Circular Linked List
 
-Stack
+**Stack**
 
-Queue
+**Queue**
 
-  -Simple Queue
+  * Simple Queue
 
-  -Circular Queue
+  * Circular Queue
 
-  -Priority Queue
+  * Priority Queue
 
-  -Dequeue
+  * Dequeue
 
 
-**Non-Linear Data Structures**
+## Non-Linear Data Structures
 
-Tree
+**Tree**
 
-Binary Tree
+**Binary Tree**
 
-Binary Search Tree (BST)
+**Binary Search Tree (BST)**
 
-Heap
+**Heap**
 
-Balanced Binary Search Tree 
+**Balanced Binary Search Tree** 
 
-  -AVL Tree
+  * AVL Tree
 
-  -Red-Black Tree
+  * Red-Black Tree
 
-Graph
+**Graph**
 
-BFS (Breadth First Search)
+**BFS (Breadth First Search)**
 
-DFS (Depth First Search)
+**DFS (Depth First Search)**
 
-**Other Important Topics**
+## Other Important Topics
 
-Searching Algorithms
+**Searching Algorithms**
 
-  -Linear Search
+  * Linear Search
 
-  -Binary Search
+  * Binary Search
 
-Sorting Algorithms
+**Sorting Algorithms**
   
-   Comparison-Based
+   **Comparison-Based**
    
-  -Bubble Sort
+  * Bubble Sort
 
-  -Selection Sort
+  * Selection Sort
 
-  -Insertion Sort
+  * Insertion Sort
 
-  -Heap sort
+  * Heap sort
 
-   Non-Comparison-Based
+   **Non-Comparison-Based**
    
-  -Counting sort
+  * Counting sort
 
-  -Radix Sort
+  * Radix Sort
 
   
 
-Recursion
+**Recursion**
 
-Hashing
+**Hashing**
 
-**Language Used**
+## Language Used
 
 C++ (STL + Manual/Core Implementation)
 

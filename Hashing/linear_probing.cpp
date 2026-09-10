@@ -56,7 +56,8 @@ int main() {
 }
 
 /*
-Time Complexity
+⏱ Time Complexity:
+
 Insertion: O(1) average, O(n) worst case.
 Search: O(1) average, O(n) worst case.
 Deletion: O(1) average, O(n) worst case.
@@ -64,17 +65,21 @@ Deletion: O(1) average, O(n) worst case.
 For unsorted data, Binary Search cannot be used directly because it requires the data to be sorted.
 
 Options for Unsorted Data
-Linear Search (Best choice)
-No sorting required.
-Time Complexity: O(n).
-Sort first, then Binary Search
-Sorting: O(n log n)
-Binary Search: O(log n)
-Total: O(n log n).
+(1) Linear Search (Best choice)
+    No sorting required.
+    Time Complexity: O(n).
+
+(2) Sort first, then Binary Search
+   Sorting: O(n log n)
+   Binary Search: O(log n)
+   Total: O(n log n).
 Useful only if you need to perform many searches on the same data.
-Hashing (Hash Table)
+
+(3) Hashing (Hash Table)
 Average search: O(1).
 Best choice if frequent searches are needed and order is not important.
 
-For unsorted data, Binary Search is not suitable because it requires a sorted array. The best search method is Linear Search, which works directly on unsorted data with O(n) time complexity. If many searches are required, the data can first be sorted or stored in a hash table for faster searches.
+For unsorted data, Binary Search is not suitable because it requires a sorted array. 
+The best search method is Linear Search, which works directly on unsorted data with O(n) time complexity. 
+If many searches are required, the data can first be sorted or stored in a hash table for faster searches.
 */

@@ -31,10 +31,10 @@ int main()
 
 /*
 ⏱ Time Complexity
-Case	Complexity
-Best Case (first element)	O(1) ->Reason: The target element is at the first position.
-Worst Case (last/not found)	O(n)
-Average Case	O(n)
+Case	                     Complexity
+Best Case (first element)	 O(1) ->Reason: The target element is at the first position.
+Worst Case (last/not found)	 O(n)
+Average Case	             O(n)
 
 👉 Why O(n)?
 Because in worst case we check all elements.

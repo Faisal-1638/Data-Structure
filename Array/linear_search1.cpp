@@ -29,3 +29,19 @@ int main()
 
    cout << index;
 }
+
+/*
+⏱ Time Complexity
+Case	                     Complexity
+Best Case (first element)	 O(1) ->Reason: The target element is at the first position.
+Worst Case (last/not found)	 O(n)
+Average Case	             O(n)
+
+👉 Why O(n)?
+Because in worst case we check all elements.
+
+📦 Space Complexity
+
+O(1)
+(Only a few variables used)
+*/

@@ -2,7 +2,7 @@ This repository contains implementations of fundamental Data Structures in C++ a
 
 # Topics Covered
 
-## Linear Data Structures**
+## Linear Data Structures
 
 **Array**
 

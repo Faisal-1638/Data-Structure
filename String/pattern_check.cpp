@@ -1,3 +1,4 @@
+//Naive Approach
 #include <iostream>
 using namespace std;
 
@@ -39,6 +40,14 @@ return 0;
 
 }
 
+/*
+| Case  |     Time |
+| ----- | ---------|
+| Best  |     O(n) |
+| Worst | O(n × m) |
+| Space |     O(1) |
+
+*/
 
 /*
 adding comparison

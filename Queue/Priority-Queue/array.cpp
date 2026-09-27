@@ -104,6 +104,163 @@ Operation	Complexity
 Insert	O(n)
 Delete	O(n)
 Peek Front	O(1)
+
+The log n comes from the height of the heap.
+
+Let's see it slowly.
+
+1. Look at a heap
+                50                 ← level 0
+             /      \
+           30        40             ← level 1
+          /  \      /  \
+        20   10   35   25           ← level 2
+       / \
+      5   8                         ← level 3
+
+Count the nodes at each level:
+
+Level 0 → 1 node
+Level 1 → 2 nodes
+Level 2 → 4 nodes
+Level 3 → 8 nodes
+
+So every time we go one level down, the number of possible nodes doubles.
+
+2. Where does log n come from?
+
+Suppose the heap has about 8 nodes.
+
+Its height is:
+
+1 → 2 → 4 → 8
+
+How many times did we double?
+
+1 → 2    (1)
+2 → 4    (2)
+4 → 8    (3)
+
+So:
+
+log₂(8) = 3
+
+Therefore, an 8-node heap has about 3 levels.
+
+For 16 nodes:
+
+1 → 2 → 4 → 8 → 16
+
+So:
+
+log₂(16) = 4
+3. Now insertion
+
+Suppose we insert 60.
+
+It first goes to the bottom:
+
+                50
+             /      \
+           30        40
+          /  \      /  \
+        20   10   35   25
+       / \
+      5   8
+     /
+    60
+
+Now 60 is bigger than 5, so swap:
+
+60 moves ↑
+
+Then it may swap with 20:
+
+60 moves ↑
+
+Then with 30:
+
+60 moves ↑
+
+Then with 50:
+
+60 moves ↑
+
+The important thing is:
+
+It only moves along one path.
+
+It doesn't check:
+
+60 against every node
+
+It only goes:
+
+bottom
+   ↑
+   ↑
+   ↑
+root
+
+How long can that path be?
+
+The height of the heap.
+
+And the height is:
+
+O(log n)
+4. Why does heap height become log n?
+
+Because the tree grows like:
+
+             1
+           /   \
+          2     2
+        / |     | \
+       4  ...   ...
+      /
+     8
+
+More generally:
+
+Level 0 → 1
+Level 1 → 2
+Level 2 → 4
+Level 3 → 8
+Level 4 → 16
+...
+
+So after h levels, you can have approximately:
+
+2^h nodes
+
+If there are n nodes:
+
+n ≈ 2^h
+
+Therefore:
+
+h ≈ log₂(n)
+
+That's where the log n comes from.
+
+The key difference
+
+In binary search:
+
+n → n/2 → n/4 → n/8 ...
+
+We literally reduce the search space by half.
+
+In a heap:
+
+1 → 2 → 4 → 8 → 16 ...
+
+The number of nodes per level doubles, which means the height is log₂(n).
+
+So both end up with O(log n), but for slightly different reasons.
+
+Heap operation = travels through the height of the tree = O(log n).
 */
 
 /*
@@ -237,4 +394,50 @@ int main()
 
     q.display();
 }
+*/
+
+/*
+If you don't keep the array sorted, you can make insertion faster:
+
+Insert → O(1)
+Remove highest → O(n)
+Front/highest → O(n)
+
+For example:
+
+30 10 50 20
+
+To remove the highest priority, you have to search for 50.
+
+So there is a trade-off:
+
+Implementation	Insert	Remove highest	Peek highest
+Your sorted array	O(n)	O(n)	O(1)
+Unsorted array	O(1)	O(n)	O(n)
+Binary Heap	O(log n)	O(log n)	O(1)
+
+And this is exactly why we use a heap for an efficient priority queue.
+
+Your code → Heap
+
+Your current structure:
+
+Priority Queue
+     ↓
+Sorted Array
+     ↓
+Insert O(n)
+Remove O(n)
+
+With a heap:
+
+Priority Queue
+     ↓
+Binary Heap
+     ↓
+Insert O(log n)
+Remove O(log n)
+Peek O(1)
+
+So your current code is actually a very good way to understand why heaps are needed before learning priority_queue and binary heaps.
 */

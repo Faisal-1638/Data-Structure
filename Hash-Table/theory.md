@@ -3,6 +3,14 @@
 Hashing is a technique that lets you find data very quickly by converting a key into an index.
 Hashing refers to the process of generating a small sized output (that can be used as index in a table) from an input of typically large and variable size. Hashing uses mathematical formulas known as hash functions to do the transformation. This technique determines an index or location for the storage of an item in a data structure called Hash Table.
 
+## Summary of Trade-offs
+
+* Linear Search: Zero overhead, works on any unsorted sequence, best for tiny inputs.
+
+* Binary Search: Optimal when data is already sorted, space-efficient, supports range and order queries.
+
+* Hashing: Fastest average-case lookup ($\mathcal{O}(1)$), ideal for exact match lookups (dictionaries, databases, caches), but uses more memory and loses ordering.
+
 ## Hash Table Data Structure Overview
 
 It is one of the most widely used data structure after arrays.

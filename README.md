@@ -6,6 +6,8 @@ This repository contains implementations of fundamental Data Structures in C++ a
 
 **Array**
 
+**String**
+
 **Linked List**
 
   * Singly Linked List
@@ -49,7 +51,7 @@ This repository contains implementations of fundamental Data Structures in C++ a
 
 **DFS (Depth First Search)**
 
-## Other Important Topics
+## Some ipportant Algorithm Topics
 
 **Searching Algorithms**
 
@@ -66,6 +68,10 @@ This repository contains implementations of fundamental Data Structures in C++ a
   * Selection Sort
 
   * Insertion Sort
+  
+  * Merge Sort
+
+  * Quick Sort
 
   * Heap sort
 

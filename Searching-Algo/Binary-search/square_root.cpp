@@ -29,7 +29,7 @@ int floorSqrt(int n) {
 }
 
 int main() {
-    int n = 11;
+    int n = 81;
     cout << floorSqrt(n);
     return 0;
 }

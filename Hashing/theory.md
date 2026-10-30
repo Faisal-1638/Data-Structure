@@ -11,6 +11,22 @@ Hashing refers to the process of generating a small sized output (that can be us
 
 * Hashing: Fastest average-case lookup ($\mathcal{O}(1)$), ideal for exact match lookups (dictionaries, databases, caches), but uses more memory and loses ordering.
 
+## Benefits of hashing
+1. Very fast searching: Average O(1) lookup is its biggest advantage.
+2. Fast insertion and deletion: Average O(1), without maintaining sorted order.
+3. Efficient key-value storage: Store a key with its associated value.
+4. Useful for large datasets: Ideal when many exact-key lookups are required.
+5. Duplicate detection: A hash set can help detect repeated values efficiently.
+6. Frequency counting: Count how many times each number or character appears.
+
+## Disadvantages of hashing
+
+- Collisions must be handled.
+- It usually requires extra memory for the hash table.
+- It does not naturally maintain sorted order.
+- Range queries, such as finding every key between 100 and 200, are   generally less efficient than with an ordered tree.
+- Performance can degrade if the hash function or table sizing is poor.
+
 ## Hash Table Data Structure Overview
 
 It is one of the most widely used data structure after arrays.
@@ -18,8 +34,9 @@ It mainly supports search, insert and delete in O(1) time on average which is mo
 We use hashing for dictionaries, frequency counting, maintaining data for quick access by key, etc.
 Real World Applications include Database Indexing, Cryptography, Caches, Symbol Table and Dictionaries.
 There are mainly two forms of hash typically implemented in programming languages.
-Hash Set : Collection of unique keys (Implemented as Set in Python, Set in JavaScrtipt, unordered_set in C++ and HashSet in Java.
+Hash Set : Collection of unique keys (Implemented as Set in Python, Set in JavaScrtipt, unordered_set in C++ and HashSet in Java.)
 Hash Map : Collection of key value pairs with keys being unique (Implemented as dictionary in Python, Map in JavaScript, unordered_map in C++ and HashMap in Java)
+
 
 ## Components of Hashing
 

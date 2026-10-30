@@ -1,27 +1,25 @@
-//Using Binary Search - O(log(n)) Time and O(1) Space
+//Using Binary Search - O(lowg(n)) Time and O(1) Space
 #include <iostream>
 using namespace std;
 
-int floorSqrt(int n) {
+int Sqrt(int n){
   
     // initial search space
-    int lo = 1, hi = n;
+    int low = 1, high = n;
     int res = 1;
     
-    while(lo <= hi) {
-        int mid = lo + (hi - lo)/2;
-        
+    while(low <= high) {
+        int mid = low + (high - low)/2;        
         // if square of mid is less than or equal to n 
         // update the result and search in upper half
         if(mid*mid <= n) {
             res = mid;
-            lo = mid + 1;
-        }
-        
+            low = mid + 1;
+        }       
         // if square of mid exceeds n, 
-      	// search in the lower half
+      	// search in the lowwer half
         else {
-            hi = mid - 1;
+            high = mid - 1;
         }
     }
     
@@ -30,6 +28,6 @@ int floorSqrt(int n) {
 
 int main() {
     int n = 81;
-    cout << floorSqrt(n);
+    cout << Sqrt(n);
     return 0;
 }

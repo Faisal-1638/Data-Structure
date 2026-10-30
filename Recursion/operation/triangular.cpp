@@ -8,7 +8,7 @@ void triangle(int n)
         return;
     }
 
-    triangle(n - 1);
+    // triangle(n - 1);
 
 
     for(int i = 0; i < n; i++)
@@ -16,7 +16,7 @@ void triangle(int n)
         cout << "*";
     }
         cout << endl;
-    //triangle(n - 1);
+    triangle(n - 1);
 }
 
 int main()

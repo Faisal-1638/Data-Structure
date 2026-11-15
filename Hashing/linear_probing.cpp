@@ -78,8 +78,14 @@ Useful only if you need to perform many searches on the same data.
 (3) Hashing (Hash Table)
 Average search: O(1).
 Best choice if frequent searches are needed and order is not important.
+The worst case O(n) occurs when many keys are mapped to the same index, causing lots of collisions.
+
+* The worst case in hashing occurs when all keys are hashed to the same index. In that case, searching, inserting, 
+and deleting may require scanning all elements, making the time complexity O(n) instead of O(1).
 
 For unsorted data, Binary Search is not suitable because it requires a sorted array. 
 The best search method is Linear Search, which works directly on unsorted data with O(n) time complexity. 
 If many searches are required, the data can first be sorted or stored in a hash table for faster searches.
+
+
 */

@@ -12,17 +12,20 @@ void heapify(vector<int>& arr, int n, int i) {
     if (right < n && arr[right] > arr[largest])
         largest = right;
 
-    if (largest != i) {
+    if (largest != i) // 1 != 1   FALSE , 1 != 0   TRUE
+    {    
         swap(arr[i], arr[largest]);
         heapify(arr, n, largest);
     }
 }
 
-void buildMaxHeap(vector<int>& arr) {
+void buildMaxHeap(vector<int>& arr) 
+{
     int n = arr.size();
 
-    for (int i = n / 2 - 1; i >= 0; i--)
-        heapify(arr, n, i);
+    for (int i = (n / 2) - 1; i >= 0; i--)
+        heapify(arr, n, i); //bottom-up heapification takes (O(n).
+    
 }
 
 int main() {

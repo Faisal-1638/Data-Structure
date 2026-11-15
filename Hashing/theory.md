@@ -9,7 +9,7 @@ Hashing refers to the process of generating a small sized output (that can be us
 
 * Binary Search: Optimal when data is already sorted, space-efficient, supports range and order queries.
 
-* Hashing: Fastest average-case lookup ($\mathcal{O}(1)$), ideal for exact match lookups (dictionaries, databases, caches), but uses more memory and loses ordering.
+* Hashing: Fastest average-case lookup O(1), ideal for exact match lookups (dictionaries, databases, caches), but uses more memory and loses ordering.
 
 ## Benefits of hashing
 1. Very fast searching: Average O(1) lookup is its biggest advantage.
